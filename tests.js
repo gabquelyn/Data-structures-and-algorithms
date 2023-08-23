@@ -1,4 +1,4 @@
-// implement binary search
+// implement binary search only on sorted arrays
 function binarySearch(arr, element) {
   let start = 0;
   let end = arr.length - 1;
@@ -40,9 +40,9 @@ const arr2 = [2, 4, 6, 8, 10];
 
 // bubble sort
 function bubbleSort(arr) {
-    let noSwapps;
+  let noSwapps;
   for (let i = arr.length; i > 0; i--) {
-    noSwapps = true
+    noSwapps = true;
     for (let j = 0; j < i - 1; j++) {
       console.log(arr, arr[j], arr[j + 1]);
       if (arr[j] > arr[j + 1]) {
@@ -50,12 +50,32 @@ function bubbleSort(arr) {
         noSwapps = false;
       }
     }
-    if(noSwapps){
-        break
+    if (noSwapps) {
+      break;
     }
   }
 
   //   return arr;
 }
 
-bubbleSort([5, 1, 2, 3, 4]);
+// bubbleSort([5, 1, 2, 3, 4]);
+
+// selection sort
+function selectionSort(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    let min = i; //storing the index of the smallest number in the array
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j] < arr[min]) {
+        min = j;
+      }
+    }
+    console.log("################");
+    console.log(arr);
+    console.log("SWAPPING TO: ");
+    [arr[i], arr[min]] = [arr[min], arr[i]];
+    console.log("################");
+    console.log(arr);
+  }
+}
+
+selectionSort([12, 13, 8, 1, 3, 8]);
