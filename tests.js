@@ -69,12 +69,9 @@ function selectionSort(arr) {
         min = j;
       }
     }
-    console.log("################");
-    console.log(arr);
-    console.log("SWAPPING TO: ");
-    [arr[i], arr[min]] = [arr[min], arr[i]];
-    console.log("################");
-    console.log(arr);
+    if (i !== min) {
+      [arr[i], arr[min]] = [arr[min], arr[i]];
+    }
   }
 }
 
